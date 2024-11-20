@@ -27,6 +27,7 @@
 		currentChatPage,
 		tags
 	} from '$lib/stores';
+	import { base } from '$app/paths';
 
 	import ChatMenu from './ChatMenu.svelte';
 	import DeleteConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
@@ -112,7 +113,7 @@
 			if ($chatId === id) {
 				await chatId.set('');
 				await tick();
-				goto('/');
+				goto(base + '/');
 			}
 
 			dispatch('change');
@@ -244,7 +245,7 @@
 				: selected
 					? 'bg-gray-100 dark:bg-gray-950'
 					: ' group-hover:bg-gray-100 dark:group-hover:bg-gray-950'}  whitespace-nowrap text-ellipsis"
-			href="/c/{id}"
+			href="{base}/c/{id}"
 			on:click={() => {
 				dispatch('select');
 

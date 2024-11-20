@@ -20,6 +20,7 @@
 		/>
 
 		<script>
+			console.log('assets', '%sveltekit.assets%');
 			function resizeIframe(obj) {
 				obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
 			}
@@ -101,7 +102,7 @@
 					left: 50%;
 					transform: translateX(-50%);
 				"
-				src="/static/splash.png"
+				src="%sveltekit.env.PUBLIC_WEBUI_API_URL%/static/splash.png"
 			/>
 
 			<div
@@ -121,7 +122,7 @@
 				<img
 					id="logo-her"
 					style="width: auto; height: 13rem"
-					src="/static/splash.png"
+					src="%sveltekit.env.PUBLIC_WEBUI_API_URL%/static/splash.png"
 					class="animate-pulse-fast"
 				/>
 

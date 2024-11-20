@@ -3,6 +3,7 @@
 	import { toast } from 'svelte-sonner';
 
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { user } from '$lib/stores';
 
 	import { getUsers } from '$lib/apis/users';
@@ -27,7 +28,7 @@
 
 	onMount(async () => {
 		if ($user?.role !== 'admin') {
-			await goto('/');
+			await goto(base + '/');
 		} else {
 			users = await getUsers(localStorage.token);
 		}

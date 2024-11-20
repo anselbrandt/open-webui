@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { WEBUI_NAME, config } from '$lib/stores';
 	import { onMount, getContext } from 'svelte';
 
@@ -9,7 +10,7 @@
 
 	onMount(async () => {
 		if ($config) {
-			await goto('/');
+			await goto(base + '/');
 		}
 
 		loaded = true;

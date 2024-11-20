@@ -6,6 +6,7 @@
 
 	import { onMount, getContext } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	import { WEBUI_NAME, config, user, showSidebar, knowledge } from '$lib/stores';
 	import { WEBUI_BASE_URL } from '$lib/constants';
@@ -97,7 +98,7 @@
 
 	onMount(async () => {
 		if ($user?.role !== 'admin') {
-			await goto('/');
+			await goto(base + '/');
 		} else {
 			await setGroups();
 			defaultPermissions = await getUserDefaultPermissions(localStorage.token);

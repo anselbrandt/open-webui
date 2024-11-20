@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, tick, getContext } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 
 	import dayjs from 'dayjs';
@@ -48,7 +49,7 @@
 				await tick();
 				loaded = true;
 			} else {
-				await goto('/');
+				await goto(base + '/');
 			}
 		})();
 	}
@@ -61,7 +62,7 @@
 		await models.set(await getModels(localStorage.token));
 		await chatId.set($page.params.id);
 		chat = await getChatByShareId(localStorage.token, $chatId).catch(async (error) => {
-			await goto('/');
+			await goto(base + '/');
 			return null;
 		});
 

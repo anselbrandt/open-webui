@@ -8,6 +8,7 @@
 	const i18n = getContext('i18n');
 
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { mobile, showSidebar, knowledge as _knowledge } from '$lib/stores';
 
@@ -517,7 +518,7 @@
 		if (res) {
 			knowledge = res;
 		} else {
-			goto('/workspace/knowledge');
+			goto(base + '/workspace/knowledge');
 		}
 
 		const dropZone = document.querySelector('body');

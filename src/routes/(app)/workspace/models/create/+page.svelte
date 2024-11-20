@@ -2,6 +2,7 @@
 	import { v4 as uuidv4 } from 'uuid';
 	import { toast } from 'svelte-sonner';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { models } from '$lib/stores';
 
 	import { onMount, tick, getContext } from 'svelte';
@@ -39,7 +40,7 @@
 			if (res) {
 				await models.set(await getModels(localStorage.token));
 				toast.success($i18n.t('Model created successfully!'));
-				await goto('/workspace/models');
+				await goto(base + '/workspace/models');
 			}
 		}
 	};

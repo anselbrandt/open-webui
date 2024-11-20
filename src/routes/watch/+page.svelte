@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	onMount(() => {
 		// Get the current URL search parameters
@@ -16,7 +17,7 @@
 			goto(`/?youtube=${encodeURIComponent(videoId)}`);
 		} else {
 			// Redirect to root if 'v' parameter doesn't exist
-			goto('/');
+			goto(base + '/');
 		}
 	});
 </script>

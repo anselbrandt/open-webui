@@ -2,6 +2,7 @@
 	import { toast } from 'svelte-sonner';
 	import { onMount, getContext } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 
 	import { functions, models } from '$lib/stores';
 	import { createNewFunction, getFunctions } from '$lib/apis/functions';
@@ -49,7 +50,7 @@
 			functions.set(await getFunctions(localStorage.token));
 			models.set(await getModels(localStorage.token));
 
-			await goto('/admin/functions');
+			await goto(base + '/admin/functions');
 		}
 	};
 
