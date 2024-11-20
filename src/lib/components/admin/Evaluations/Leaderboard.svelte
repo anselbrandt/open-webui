@@ -3,6 +3,7 @@
 	import { AutoModel, AutoTokenizer } from '@huggingface/transformers';
 
 	import { onMount, getContext } from 'svelte';
+	import { base } from '$app/paths';
 	import { models } from '$lib/stores';
 
 	import Spinner from '$lib/components/common/Spinner.svelte';
@@ -349,7 +350,7 @@
 							<div class="flex items-center gap-2">
 								<div class="flex-shrink-0">
 									<img
-										src={model?.info?.meta?.profile_image_url ?? '/favicon.png'}
+										src="{base}{model?.info?.meta?.profile_image_url ?? '/favicon.png'}"
 										alt={model.name}
 										class="size-5 rounded-full object-cover shrink-0"
 									/>

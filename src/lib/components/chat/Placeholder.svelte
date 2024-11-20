@@ -7,6 +7,7 @@
 
 	const dispatch = createEventDispatcher();
 
+	import { base } from '$app/paths';
 	import { config, user, models as _models, temporaryChatEnabled } from '$lib/stores';
 	import { sanitizeResponseContent, findWordIndices } from '$lib/utils';
 	import { WEBUI_BASE_URL } from '$lib/constants';
@@ -120,10 +121,10 @@
 								>
 									<img
 										crossorigin="anonymous"
-										src={model?.info?.meta?.profile_image_url ??
+										src="{base}{model?.info?.meta?.profile_image_url ??
 											($i18n.language === 'dg-DG'
 												? `/doge.png`
-												: `${WEBUI_BASE_URL}/static/favicon.png`)}
+												: `${WEBUI_BASE_URL}/static/favicon.png`)}"
 										class=" size-9 sm:size-10 rounded-full border-[1px] border-gray-200 dark:border-none"
 										alt="logo"
 										draggable="false"

@@ -6,6 +6,7 @@
 	import { onMount, getContext, tick } from 'svelte';
 	const i18n = getContext('i18n');
 
+	import { base } from '$app/paths';
 	import { WEBUI_NAME, config, mobile, models as _models, settings, user } from '$lib/stores';
 	import {
 		createNewModel,
@@ -205,7 +206,7 @@
 										: 'opacity-50 dark:opacity-50'} "
 								>
 									<img
-										src={model?.meta?.profile_image_url ?? '/static/favicon.png'}
+										src="{base}{model?.meta?.profile_image_url ?? '/static/favicon.png'}"
 										alt="modelfile profile"
 										class=" rounded-full w-full h-auto object-cover"
 									/>

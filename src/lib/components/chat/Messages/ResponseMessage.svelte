@@ -9,6 +9,7 @@
 
 	const dispatch = createEventDispatcher();
 
+	import { base } from '$app/paths';
 	import { config, models, settings, user } from '$lib/stores';
 	import { synthesizeOpenAISpeech } from '$lib/apis/audio';
 	import { imageGenerations } from '$lib/apis/images';
@@ -479,8 +480,8 @@
 	>
 		<div class={`flex-shrink-0 ${($settings?.chatDirection ?? 'LTR') === 'LTR' ? 'mr-3' : 'ml-3'}`}>
 			<ProfileImage
-				src={model?.info?.meta?.profile_image_url ??
-					($i18n.language === 'dg-DG' ? `/doge.png` : `${WEBUI_BASE_URL}/static/favicon.png`)}
+				src="{base}{model?.info?.meta?.profile_image_url ??
+					($i18n.language === 'dg-DG' ? `/doge.png` : `${WEBUI_BASE_URL}/static/favicon.png`)}"
 				className={'size-8'}
 			/>
 		</div>

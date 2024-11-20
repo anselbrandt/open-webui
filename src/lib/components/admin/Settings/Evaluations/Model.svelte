@@ -3,6 +3,7 @@
 	const dispatch = createEventDispatcher();
 	const i18n = getContext('i18n');
 
+	import { base } from '$app/paths';
 	import Cog6 from '$lib/components/icons/Cog6.svelte';
 	import ArenaModelModal from './ArenaModelModal.svelte';
 	export let model;
@@ -27,7 +28,7 @@
 		<div class="flex flex-col flex-1">
 			<div class="flex gap-2.5 items-center">
 				<img
-					src={model.meta.profile_image_url}
+					src="{base}{model.meta.profile_image_url}"
 					alt={model.name}
 					class="size-8 rounded-full object-cover shrink-0"
 				/>
