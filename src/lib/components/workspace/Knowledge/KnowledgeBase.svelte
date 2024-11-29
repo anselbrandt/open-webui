@@ -69,7 +69,7 @@
 	let inputFiles = null;
 
 	let filteredItems = [];
-	$: if (knowledge) {
+	$: if (knowledge && knowledge.files) {
 		fuse = new Fuse(knowledge.files, {
 			keys: ['meta.name', 'meta.description']
 		});
